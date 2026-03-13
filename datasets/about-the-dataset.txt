@@ -1,0 +1,6 @@
+The datasets included in this folder are for evaluating literacy and urbanization statistics, state-wise, using 2001 and 2011 census data and, district-wise, using 2011 census. The data have been downloaded from data.gov.in and censusindia.gov.in.
+
+Source link:
+(1) https://www.data.gov.in/resource/state-wise-literacy-rates-and-increase-literacy-rates-census-during-2001-and-2011-ministry
+(2) https://www.data.gov.in/resource/state-ut-wise-rural-and-urban-population-census-during-2001-and-2011
+(3) https://censusindia.gov.in/census.website/data/population-finder
