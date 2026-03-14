@@ -1,0 +1,7 @@
+# Python venv
+
+miniproj/
+
+#Large Datasets
+
+data_sources/NDAP/2011_census.csv
