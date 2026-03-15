@@ -13,8 +13,7 @@ Columns: Sex ratio values for different census years and areas
 
 ### What this dataset contains
 
-This dataset shows the sex ratio of districts in India for Census 2001 and Census 2011
-It compares rural, urban and total population sex ratios.
+This dataset shows the sex ratio of districts in India for Census 2001 and Census 2011. It compares rural, urban and total population sex ratios.
 
 ### Columns 
 
@@ -50,12 +49,12 @@ Fertility (%) - DLHS IV.csv
 ### Number of rows and columns
 
 Rows: 295
+
 Columns: State, district and fertility indicators
 
 ### What this dataset contains
 
-This dataset comes from the District Level Household Survey (DLHS-IV)
-It provides fertility related statistics for districts in India
+This dataset comes from the District Level Household Survey (DLHS-IV). It provides fertility related statistics for districts in India
 
 ### Columns explained
 
@@ -81,12 +80,12 @@ Fertility Indicators for Major States of General Marital Fertility Rate and Tota
 ### Number of rows and columns
 
 Rows: 168
+
 Columns: State, year and fertility indicators
 
 ### What this dataset contains
 
-This dataset shows fertility indicators for major Indian states from 2006 to 2013
-It focuses on fertility among married women
+This dataset shows fertility indicators for major Indian states from 2006 to 2013. It focuses on fertility among married women
 
 ### Columns explained
 
@@ -137,6 +136,7 @@ Total Fertility Rate India 2011.csv
 ### Number of rows and columns
 
 Rows: 21 (states)
+
 Columns: fertility rate values for many years
 
 ### What this dataset contains
