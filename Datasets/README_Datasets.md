@@ -19,9 +19,9 @@ This dataset shows the sex ratio of districts in India for Census 2001 and Censu
 
 District: Name of the district
 
-Sex Ratio 2001 Rural: Number of females per 1000 males in **rural areas in 2001
+Sex Ratio 2001 Rural: Number of females per 1000 males in rural areas in 2001
 
-Sex Ratio 2001 Urban: Number of females per 1000 males in **urban areas in 2001
+Sex Ratio 2001 Urban: Number of females per 1000 males in urban areas in 2001
 
 Sex Ratio 2001 Total: Overall sex ratio in 2001
 
