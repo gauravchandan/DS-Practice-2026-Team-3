@@ -8,6 +8,7 @@ District, Sex Ratio_2001_Rural, Sex Ratio_2001_Urban, Sex Ratio_2001_Total, Sex 
 ### Number of rows and columns
 
 Rows: 228 (district records)
+
 Columns: Sex ratio values for different census years and areas
 
 ### What this dataset contains
