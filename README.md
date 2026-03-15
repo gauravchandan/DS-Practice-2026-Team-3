@@ -6,7 +6,7 @@ This project builds an end-to-end data pipeline to ingest, clean, analyze, and v
 
 ---
 
-# 2. Team Members
+## Team Members
 
 - Gaurav Chandan     
 - Soumya Ranjan
@@ -14,7 +14,7 @@ This project builds an end-to-end data pipeline to ingest, clean, analyze, and v
 - Dheeraj Kumar Gehlot
 ---
 
-# 3. Project Objective
+## Project Objective
 
 The goal of this project is to analyze demographic patterns across India using datasets from multiple sectors including:
 
@@ -27,7 +27,7 @@ We aim to build an interactive dashboard that helps users explore regional dispa
 
 ---
 
-# 4. Data Sources
+## Data Sources
 
 | Dataset | Source | Description |
 |--------|--------|-------------|
@@ -38,46 +38,46 @@ We aim to build an interactive dashboard that helps users explore regional dispa
 
 ---
 
-# 5. Data Preprocessing Plan
+## Data Preprocessing Plan
 
-## 5.1 Data Cleaning
+### Data Cleaning
 - Standardize column names
 - Remove duplicate records
 - Handle missing values
 
-## 5.2 Data Standardization
+### Data Standardization
 - Standardize state/district names
 - Convert columns to correct data types
 
-## 5.3 Normalization
+### Normalization
 Convert absolute values into comparable indicators such as:
 
 - GDP per capita
 - literacy rate statewise
 - Income in rural v/s urban
 
-## 5.4 Dataset Integration
+### Dataset Integration
 Merge datasets using common geographic identifiers (state or district).
 
 ---
 
-# 6. Planned Analysis
+## Planned Analysis
 
-## Population Analysis
+### Population Analysis
 - Population distribution
 - Population density
 
-## Economic Analysis
+### Economic Analysis
 - Income vs population
 - Poverty rates by region
 
-## Healthcare Analysis
+### Healthcare Analysis
 - Fertility distrivt-wise
 - Mortality indicators
 
 --
 
-# 7. Visualization Plan
+## Visualization Plan
 
 Planned visualizations include:
 
@@ -87,17 +87,18 @@ Planned visualizations include:
 - Time-series plots 
 
 ---
-## 8. Code Structrure
+## Code Structrure
 
-- Create a single class whose objects will be initialised with the following variables describing the data it loads:
---> Granularity (State-wise, District-wise, etc.)
---> Indicators
---> Timescale (if applicable)
---> Data source
+1. Create a single class whose objects will be initialised with the following variables describing the data it loads:
+- Granularity (State-wise, District-wise, etc.)
+- Indicators
+- Timescale (if applicable)
+-  Data source
 
 (Note: Clearly not all combinations of these variables can be accepted as inputs. The gui will be hard-coded to accept only compatible inputs.)
 
-- Equip the class with methods to plot combinations of the loaded data in styles of the user's choosing
+2. Equip the class with methods to plot combinations of the loaded data in styles of the user's choosing
 
-- Wrap the whole thing in an easy-to-use GUI.
+3. Wrap the whole thing in an easy-to-use GUI.
+
 
