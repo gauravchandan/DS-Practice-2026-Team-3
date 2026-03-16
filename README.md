@@ -34,7 +34,7 @@ We aim to build an interactive dashboard that helps users explore regional dispa
 | Population | Census 2001,2011 | Population by state/district |
 | Economic | data.gov | Income, GDP |
 | Healthcare | data.gov | mortality,fertility |
-| Literacy and Urbanisation | data.gov | literacy rate, population data |
+| Literacy and Urbanisation | data.gov, Census 2011, 2001 | literacy rate, population data |
 
 ---
 
