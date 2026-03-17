@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
+import src.metadata
 import src.helpers as dload 
+from src.metadata import *
 
 st.title("Demographic Data Dashboard for India")
 
@@ -11,8 +13,11 @@ columns, times =  dload.columns_times(source)
 columns = st.sidebar.multiselect('Select Indicators', columns)
 
 # Add a slider to the sidebar:
-times = st.sidebar.slider('Select time range', times[0], times[-1], (times[0], times[-1]))
-times = range(times[0],times[1]+1)
+try:
+    times = st.sidebar.slider('Select time range', times[0], times[-1], (times[0], times[-1]))
+    times = range(times[0],times[1]+1)
+except:
+    pass
 
 data = dload.dataset(source,columns,times)
 
