@@ -10,7 +10,7 @@ st.title("Demographic Data Dashboard for India")
 source = st.sidebar.selectbox("Pick a data source.", ["World Bank", "Census 2011"])
 columns, times =  dload.columns_times(source)
 
-columns = st.sidebar.multiselect('Select Indicators', columns)
+columns = st.sidebar.multiselect('Select Columns', columns)
 
 # Add a slider to the sidebar:
 try:

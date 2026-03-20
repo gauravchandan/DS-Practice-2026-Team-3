@@ -56,6 +56,7 @@ class dataset():
             grouping = st.selectbox("Groupby", groupings[self.source])
             aggregator = st.selectbox("Select aggregator", aggregates)
             metrics = st.multiselect("Select Metrics", self.df.select_dtypes(include='number').columns)
-            st.bar_chart(self.df.groupby(grouping)[metrics].agg(aggregator), y=metrics)
+            grouped_df = df.groupby(grouping)[metrics]
+            st.bar_chart(grouped_df)
     
     
