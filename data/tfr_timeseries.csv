@@ -1,0 +1,841 @@
+State,Year,TFR
+Andhra Pradesh,1971,4.6
+Andhra Pradesh,1972,4.7
+Andhra Pradesh,1973,4.2
+Andhra Pradesh,1974,4.6
+Andhra Pradesh,1975,4.6
+Andhra Pradesh,1976,4.4
+Andhra Pradesh,1977,4.1
+Andhra Pradesh,1978,4.4
+Andhra Pradesh,1979,4.0
+Andhra Pradesh,1980,3.8
+Andhra Pradesh,1981,4.0
+Andhra Pradesh,1982,3.9
+Andhra Pradesh,1983,3.9
+Andhra Pradesh,1984,4.0
+Andhra Pradesh,1985,3.7
+Andhra Pradesh,1986,3.8
+Andhra Pradesh,1987,3.6
+Andhra Pradesh,1988,3.3
+Andhra Pradesh,1989,3.1
+Andhra Pradesh,1990,3.1
+Andhra Pradesh,1991,3.0
+Andhra Pradesh,1992,2.8
+Andhra Pradesh,1993,2.7
+Andhra Pradesh,1994,2.7
+Andhra Pradesh,1995,2.7
+Andhra Pradesh,1996,2.5
+Andhra Pradesh,1997,2.5
+Andhra Pradesh,1998,2.4
+Andhra Pradesh,1999,2.4
+Andhra Pradesh,2000,2.3
+Andhra Pradesh,2001,2.3
+Andhra Pradesh,2002,2.2
+Andhra Pradesh,2003,2.2
+Andhra Pradesh,2004,2.1
+Andhra Pradesh,2005,2.0
+Andhra Pradesh,2006,2.0
+Andhra Pradesh,2007,1.9
+Andhra Pradesh,2008,1.8
+Andhra Pradesh,2009,1.9
+Andhra Pradesh,2010,1.8
+Assam,1971,5.7
+Assam,1972,5.1
+Assam,1973,4.8
+Assam,1974,4.6
+Assam,1975,4.1
+Assam,1976,4.5
+Assam,1977,4.0
+Assam,1978,4.0
+Assam,1979,4.3
+Assam,1980,4.0
+Assam,1981,4.1
+Assam,1982,4.2
+Assam,1983,4.2
+Assam,1984,4.3
+Assam,1985,4.1
+Assam,1986,4.0
+Assam,1987,4.0
+Assam,1988,3.8
+Assam,1989,3.4
+Assam,1990,3.4
+Assam,1991,3.5
+Assam,1992,3.4
+Assam,1993,3.3
+Assam,1994,3.8
+Assam,1995,3.5
+Assam,1996,3.2
+Assam,1997,3.2
+Assam,1998,3.2
+Assam,1999,3.2
+Assam,2000,3.1
+Assam,2001,3.0
+Assam,2002,3.0
+Assam,2003,2.9
+Assam,2004,2.9
+Assam,2005,2.9
+Assam,2006,2.7
+Assam,2007,2.7
+Assam,2008,2.6
+Assam,2009,2.6
+Assam,2010,2.5
+Bihar,1971,
+Bihar,1972,
+Bihar,1973,
+Bihar,1974,
+Bihar,1975,
+Bihar,1976,
+Bihar,1977,
+Bihar,1978,
+Bihar,1979,
+Bihar,1980,
+Bihar,1981,5.7
+Bihar,1982,5.6
+Bihar,1983,5.5
+Bihar,1984,5.9
+Bihar,1985,5.4
+Bihar,1986,5.2
+Bihar,1987,5.3
+Bihar,1988,5.4
+Bihar,1989,5.1
+Bihar,1990,4.8
+Bihar,1991,4.4
+Bihar,1992,4.6
+Bihar,1993,4.6
+Bihar,1994,4.6
+Bihar,1995,4.5
+Bihar,1996,4.5
+Bihar,1997,4.4
+Bihar,1998,4.3
+Bihar,1999,4.5
+Bihar,2000,4.5
+Bihar,2001,4.4
+Bihar,2002,4.3
+Bihar,2003,4.2
+Bihar,2004,4.3
+Bihar,2005,4.3
+Bihar,2006,4.2
+Bihar,2007,3.9
+Bihar,2008,3.9
+Bihar,2009,3.9
+Bihar,2010,3.7
+Chhattisgarh,1971,
+Chhattisgarh,1972,
+Chhattisgarh,1973,
+Chhattisgarh,1974,
+Chhattisgarh,1975,
+Chhattisgarh,1976,
+Chhattisgarh,1977,
+Chhattisgarh,1978,
+Chhattisgarh,1979,
+Chhattisgarh,1980,
+Chhattisgarh,1981,
+Chhattisgarh,1982,
+Chhattisgarh,1983,
+Chhattisgarh,1984,
+Chhattisgarh,1985,
+Chhattisgarh,1986,
+Chhattisgarh,1987,
+Chhattisgarh,1988,
+Chhattisgarh,1989,
+Chhattisgarh,1990,
+Chhattisgarh,1991,
+Chhattisgarh,1992,
+Chhattisgarh,1993,
+Chhattisgarh,1994,
+Chhattisgarh,1995,
+Chhattisgarh,1996,
+Chhattisgarh,1997,
+Chhattisgarh,1998,
+Chhattisgarh,1999,
+Chhattisgarh,2000,
+Chhattisgarh,2001,
+Chhattisgarh,2002,
+Chhattisgarh,2003,
+Chhattisgarh,2004,3.3
+Chhattisgarh,2005,3.4
+Chhattisgarh,2006,3.3
+Chhattisgarh,2007,3.1
+Chhattisgarh,2008,3.0
+Chhattisgarh,2009,3.0
+Chhattisgarh,2010,2.8
+Delhi,1971,
+Delhi,1972,
+Delhi,1973,
+Delhi,1974,
+Delhi,1975,
+Delhi,1976,
+Delhi,1977,
+Delhi,1978,
+Delhi,1979,
+Delhi,1980,
+Delhi,1981,
+Delhi,1982,
+Delhi,1983,
+Delhi,1984,
+Delhi,1985,
+Delhi,1986,
+Delhi,1987,
+Delhi,1988,
+Delhi,1989,
+Delhi,1990,
+Delhi,1991,
+Delhi,1992,
+Delhi,1993,
+Delhi,1994,
+Delhi,1995,
+Delhi,1996,
+Delhi,1997,
+Delhi,1998,
+Delhi,1999,
+Delhi,2000,
+Delhi,2001,
+Delhi,2002,
+Delhi,2003,
+Delhi,2004,2.1
+Delhi,2005,2.1
+Delhi,2006,2.1
+Delhi,2007,2.0
+Delhi,2008,2.0
+Delhi,2009,1.9
+Delhi,2010,1.9
+Gujarat,1971,5.6
+Gujarat,1972,5.6
+Gujarat,1973,4.9
+Gujarat,1974,5.4
+Gujarat,1975,5.1
+Gujarat,1976,5.2
+Gujarat,1977,4.8
+Gujarat,1978,4.8
+Gujarat,1979,4.6
+Gujarat,1980,4.7
+Gujarat,1981,4.3
+Gujarat,1982,4.2
+Gujarat,1983,4.2
+Gujarat,1984,4.0
+Gujarat,1985,3.9
+Gujarat,1986,3.8
+Gujarat,1987,3.6
+Gujarat,1988,3.4
+Gujarat,1989,3.6
+Gujarat,1990,3.4
+Gujarat,1991,3.1
+Gujarat,1992,3.2
+Gujarat,1993,3.2
+Gujarat,1994,3.1
+Gujarat,1995,3.2
+Gujarat,1996,3.0
+Gujarat,1997,3.0
+Gujarat,1998,3.0
+Gujarat,1999,3.0
+Gujarat,2000,2.9
+Gujarat,2001,2.9
+Gujarat,2002,2.8
+Gujarat,2003,2.8
+Gujarat,2004,2.8
+Gujarat,2005,2.8
+Gujarat,2006,2.7
+Gujarat,2007,2.6
+Gujarat,2008,2.5
+Gujarat,2009,2.5
+Gujarat,2010,2.5
+Haryana,1971,6.7
+Haryana,1972,6.6
+Haryana,1973,6.4
+Haryana,1974,6.2
+Haryana,1975,5.8
+Haryana,1976,5.2
+Haryana,1977,4.9
+Haryana,1978,4.7
+Haryana,1979,5.2
+Haryana,1980,5.2
+Haryana,1981,5.0
+Haryana,1982,4.9
+Haryana,1983,4.8
+Haryana,1984,5.0
+Haryana,1985,4.6
+Haryana,1986,4.4
+Haryana,1987,4.3
+Haryana,1988,4.2
+Haryana,1989,4.4
+Haryana,1990,3.8
+Haryana,1991,4.0
+Haryana,1992,3.8
+Haryana,1993,3.7
+Haryana,1994,3.7
+Haryana,1995,3.7
+Haryana,1996,3.5
+Haryana,1997,3.4
+Haryana,1998,3.3
+Haryana,1999,3.2
+Haryana,2000,3.2
+Haryana,2001,3.1
+Haryana,2002,3.1
+Haryana,2003,3.0
+Haryana,2004,3.0
+Haryana,2005,2.8
+Haryana,2006,2.7
+Haryana,2007,2.6
+Haryana,2008,2.5
+Haryana,2009,2.5
+Haryana,2010,2.3
+Himachal Pradesh,1971,
+Himachal Pradesh,1972,
+Himachal Pradesh,1973,
+Himachal Pradesh,1974,
+Himachal Pradesh,1975,
+Himachal Pradesh,1976,
+Himachal Pradesh,1977,
+Himachal Pradesh,1978,
+Himachal Pradesh,1979,
+Himachal Pradesh,1980,
+Himachal Pradesh,1981,
+Himachal Pradesh,1982,
+Himachal Pradesh,1983,
+Himachal Pradesh,1984,
+Himachal Pradesh,1985,
+Himachal Pradesh,1986,
+Himachal Pradesh,1987,
+Himachal Pradesh,1988,
+Himachal Pradesh,1989,
+Himachal Pradesh,1990,
+Himachal Pradesh,1991,
+Himachal Pradesh,1992,
+Himachal Pradesh,1993,
+Himachal Pradesh,1994,
+Himachal Pradesh,1995,
+Himachal Pradesh,1996,
+Himachal Pradesh,1997,
+Himachal Pradesh,1998,
+Himachal Pradesh,1999,
+Himachal Pradesh,2000,
+Himachal Pradesh,2001,
+Himachal Pradesh,2002,
+Himachal Pradesh,2003,
+Himachal Pradesh,2004,2.1
+Himachal Pradesh,2005,2.2
+Himachal Pradesh,2006,2.0
+Himachal Pradesh,2007,1.9
+Himachal Pradesh,2008,1.9
+Himachal Pradesh,2009,1.9
+Himachal Pradesh,2010,1.8
+Jammu and Kashmir,1971,
+Jammu and Kashmir,1972,
+Jammu and Kashmir,1973,
+Jammu and Kashmir,1974,
+Jammu and Kashmir,1975,
+Jammu and Kashmir,1976,
+Jammu and Kashmir,1977,
+Jammu and Kashmir,1978,
+Jammu and Kashmir,1979,
+Jammu and Kashmir,1980,
+Jammu and Kashmir,1981,
+Jammu and Kashmir,1982,
+Jammu and Kashmir,1983,
+Jammu and Kashmir,1984,
+Jammu and Kashmir,1985,
+Jammu and Kashmir,1986,
+Jammu and Kashmir,1987,
+Jammu and Kashmir,1988,
+Jammu and Kashmir,1989,
+Jammu and Kashmir,1990,
+Jammu and Kashmir,1991,
+Jammu and Kashmir,1992,
+Jammu and Kashmir,1993,
+Jammu and Kashmir,1994,
+Jammu and Kashmir,1995,
+Jammu and Kashmir,1996,
+Jammu and Kashmir,1997,
+Jammu and Kashmir,1998,
+Jammu and Kashmir,1999,
+Jammu and Kashmir,2000,
+Jammu and Kashmir,2001,
+Jammu and Kashmir,2002,
+Jammu and Kashmir,2003,
+Jammu and Kashmir,2004,2.4
+Jammu and Kashmir,2005,2.4
+Jammu and Kashmir,2006,2.3
+Jammu and Kashmir,2007,2.3
+Jammu and Kashmir,2008,2.2
+Jammu and Kashmir,2009,2.2
+Jammu and Kashmir,2010,2.0
+Jharkhand,1971,
+Jharkhand,1972,
+Jharkhand,1973,
+Jharkhand,1974,
+Jharkhand,1975,
+Jharkhand,1976,
+Jharkhand,1977,
+Jharkhand,1978,
+Jharkhand,1979,
+Jharkhand,1980,
+Jharkhand,1981,
+Jharkhand,1982,
+Jharkhand,1983,
+Jharkhand,1984,
+Jharkhand,1985,
+Jharkhand,1986,
+Jharkhand,1987,
+Jharkhand,1988,
+Jharkhand,1989,
+Jharkhand,1990,
+Jharkhand,1991,
+Jharkhand,1992,
+Jharkhand,1993,
+Jharkhand,1994,
+Jharkhand,1995,
+Jharkhand,1996,
+Jharkhand,1997,
+Jharkhand,1998,
+Jharkhand,1999,
+Jharkhand,2000,
+Jharkhand,2001,
+Jharkhand,2002,
+Jharkhand,2003,
+Jharkhand,2004,3.5
+Jharkhand,2005,3.5
+Jharkhand,2006,3.4
+Jharkhand,2007,3.2
+Jharkhand,2008,3.2
+Jharkhand,2009,3.2
+Jharkhand,2010,3.0
+Karnataka,1971,4.4
+Karnataka,1972,4.3
+Karnataka,1973,3.9
+Karnataka,1974,3.7
+Karnataka,1975,3.7
+Karnataka,1976,3.8
+Karnataka,1977,3.6
+Karnataka,1978,3.8
+Karnataka,1979,3.6
+Karnataka,1980,3.5
+Karnataka,1981,3.6
+Karnataka,1982,3.6
+Karnataka,1983,3.7
+Karnataka,1984,3.8
+Karnataka,1985,3.6
+Karnataka,1986,3.5
+Karnataka,1987,3.4
+Karnataka,1988,3.4
+Karnataka,1989,3.3
+Karnataka,1990,3.2
+Karnataka,1991,3.1
+Karnataka,1992,2.9
+Karnataka,1993,2.9
+Karnataka,1994,2.8
+Karnataka,1995,2.7
+Karnataka,1996,2.6
+Karnataka,1997,2.5
+Karnataka,1998,2.4
+Karnataka,1999,2.5
+Karnataka,2000,2.4
+Karnataka,2001,2.4
+Karnataka,2002,2.4
+Karnataka,2003,2.3
+Karnataka,2004,2.3
+Karnataka,2005,2.2
+Karnataka,2006,2.1
+Karnataka,2007,2.1
+Karnataka,2008,2.0
+Karnataka,2009,2.0
+Karnataka,2010,2.0
+Kerala,1971,4.1
+Kerala,1972,4.1
+Kerala,1973,3.8
+Kerala,1974,3.3
+Kerala,1975,3.4
+Kerala,1976,3.4
+Kerala,1977,3.0
+Kerala,1978,2.9
+Kerala,1979,3.0
+Kerala,1980,3.0
+Kerala,1981,2.8
+Kerala,1982,2.9
+Kerala,1983,2.6
+Kerala,1984,2.4
+Kerala,1985,2.4
+Kerala,1986,2.3
+Kerala,1987,2.2
+Kerala,1988,2.0
+Kerala,1989,2.0
+Kerala,1990,1.9
+Kerala,1991,1.8
+Kerala,1992,1.7
+Kerala,1993,1.7
+Kerala,1994,1.7
+Kerala,1995,1.8
+Kerala,1996,1.8
+Kerala,1997,1.8
+Kerala,1998,1.8
+Kerala,1999,1.8
+Kerala,2000,1.9
+Kerala,2001,1.8
+Kerala,2002,1.8
+Kerala,2003,1.8
+Kerala,2004,1.7
+Kerala,2005,1.7
+Kerala,2006,1.7
+Kerala,2007,1.7
+Kerala,2008,1.7
+Kerala,2009,1.7
+Kerala,2010,1.8
+Madhya Pradesh,1971,5.6
+Madhya Pradesh,1972,5.9
+Madhya Pradesh,1973,5.5
+Madhya Pradesh,1974,5.4
+Madhya Pradesh,1975,6.0
+Madhya Pradesh,1976,5.8
+Madhya Pradesh,1977,5.5
+Madhya Pradesh,1978,5.3
+Madhya Pradesh,1979,5.4
+Madhya Pradesh,1980,5.2
+Madhya Pradesh,1981,5.2
+Madhya Pradesh,1982,5.3
+Madhya Pradesh,1983,5.2
+Madhya Pradesh,1984,5.1
+Madhya Pradesh,1985,4.6
+Madhya Pradesh,1986,4.9
+Madhya Pradesh,1987,4.7
+Madhya Pradesh,1988,4.7
+Madhya Pradesh,1989,4.7
+Madhya Pradesh,1990,4.8
+Madhya Pradesh,1991,4.6
+Madhya Pradesh,1992,4.4
+Madhya Pradesh,1993,4.2
+Madhya Pradesh,1994,4.2
+Madhya Pradesh,1995,4.2
+Madhya Pradesh,1996,4.1
+Madhya Pradesh,1997,4.0
+Madhya Pradesh,1998,3.9
+Madhya Pradesh,1999,3.9
+Madhya Pradesh,2000,4.0
+Madhya Pradesh,2001,3.9
+Madhya Pradesh,2002,3.8
+Madhya Pradesh,2003,3.8
+Madhya Pradesh,2004,3.7
+Madhya Pradesh,2005,3.6
+Madhya Pradesh,2006,3.5
+Madhya Pradesh,2007,3.4
+Madhya Pradesh,2008,3.3
+Madhya Pradesh,2009,3.3
+Madhya Pradesh,2010,3.2
+Maharashtra,1971,4.6
+Maharashtra,1972,4.5
+Maharashtra,1973,3.9
+Maharashtra,1974,4.1
+Maharashtra,1975,4.4
+Maharashtra,1976,3.9
+Maharashtra,1977,3.4
+Maharashtra,1978,3.5
+Maharashtra,1979,3.5
+Maharashtra,1980,3.7
+Maharashtra,1981,3.6
+Maharashtra,1982,3.8
+Maharashtra,1983,3.7
+Maharashtra,1984,3.8
+Maharashtra,1985,3.5
+Maharashtra,1986,3.6
+Maharashtra,1987,3.5
+Maharashtra,1988,3.5
+Maharashtra,1989,3.4
+Maharashtra,1990,3.2
+Maharashtra,1991,3.0
+Maharashtra,1992,2.9
+Maharashtra,1993,2.9
+Maharashtra,1994,2.9
+Maharashtra,1995,2.9
+Maharashtra,1996,2.8
+Maharashtra,1997,2.7
+Maharashtra,1998,2.7
+Maharashtra,1999,2.5
+Maharashtra,2000,2.5
+Maharashtra,2001,2.4
+Maharashtra,2002,2.3
+Maharashtra,2003,2.3
+Maharashtra,2004,2.2
+Maharashtra,2005,2.2
+Maharashtra,2006,2.1
+Maharashtra,2007,2.0
+Maharashtra,2008,2.0
+Maharashtra,2009,1.9
+Maharashtra,2010,1.9
+Odisha,1971,4.7
+Odisha,1972,4.6
+Odisha,1973,4.8
+Odisha,1974,4.7
+Odisha,1975,4.6
+Odisha,1976,4.7
+Odisha,1977,4.0
+Odisha,1978,4.5
+Odisha,1979,4.1
+Odisha,1980,4.1
+Odisha,1981,4.3
+Odisha,1982,4.3
+Odisha,1983,4.5
+Odisha,1984,4.3
+Odisha,1985,3.8
+Odisha,1986,4.2
+Odisha,1987,3.7
+Odisha,1988,3.8
+Odisha,1989,3.6
+Odisha,1990,3.5
+Odisha,1991,3.3
+Odisha,1992,3.1
+Odisha,1993,3.1
+Odisha,1994,3.3
+Odisha,1995,3.3
+Odisha,1996,3.1
+Odisha,1997,3.0
+Odisha,1998,2.9
+Odisha,1999,2.7
+Odisha,2000,2.8
+Odisha,2001,2.6
+Odisha,2002,2.6
+Odisha,2003,2.6
+Odisha,2004,2.7
+Odisha,2005,2.6
+Odisha,2006,2.5
+Odisha,2007,2.4
+Odisha,2008,2.4
+Odisha,2009,2.4
+Odisha,2010,2.3
+Punjab,1971,5.2
+Punjab,1972,5.3
+Punjab,1973,5.1
+Punjab,1974,4.8
+Punjab,1975,4.7
+Punjab,1976,4.8
+Punjab,1977,4.4
+Punjab,1978,4.0
+Punjab,1979,3.7
+Punjab,1980,4.0
+Punjab,1981,4.0
+Punjab,1982,4.0
+Punjab,1983,4.0
+Punjab,1984,3.8
+Punjab,1985,3.5
+Punjab,1986,3.4
+Punjab,1987,3.4
+Punjab,1988,3.4
+Punjab,1989,3.3
+Punjab,1990,3.2
+Punjab,1991,3.1
+Punjab,1992,3.1
+Punjab,1993,3.0
+Punjab,1994,2.9
+Punjab,1995,2.9
+Punjab,1996,2.8
+Punjab,1997,2.7
+Punjab,1998,2.6
+Punjab,1999,2.5
+Punjab,2000,2.4
+Punjab,2001,2.4
+Punjab,2002,2.3
+Punjab,2003,2.3
+Punjab,2004,2.2
+Punjab,2005,2.1
+Punjab,2006,2.1
+Punjab,2007,2.0
+Punjab,2008,1.9
+Punjab,2009,1.9
+Punjab,2010,1.8
+Rajasthan,1971,6.3
+Rajasthan,1972,5.6
+Rajasthan,1973,5.4
+Rajasthan,1974,5.4
+Rajasthan,1975,5.4
+Rajasthan,1976,4.9
+Rajasthan,1977,5.0
+Rajasthan,1978,5.1
+Rajasthan,1979,5.2
+Rajasthan,1980,5.6
+Rajasthan,1981,5.2
+Rajasthan,1982,5.3
+Rajasthan,1983,5.9
+Rajasthan,1984,5.7
+Rajasthan,1985,5.5
+Rajasthan,1986,5.0
+Rajasthan,1987,4.8
+Rajasthan,1988,4.5
+Rajasthan,1989,4.7
+Rajasthan,1990,4.5
+Rajasthan,1991,4.6
+Rajasthan,1992,4.5
+Rajasthan,1993,4.5
+Rajasthan,1994,4.5
+Rajasthan,1995,4.4
+Rajasthan,1996,4.2
+Rajasthan,1997,4.2
+Rajasthan,1998,4.1
+Rajasthan,1999,4.2
+Rajasthan,2000,4.1
+Rajasthan,2001,4.0
+Rajasthan,2002,3.9
+Rajasthan,2003,3.8
+Rajasthan,2004,3.7
+Rajasthan,2005,3.7
+Rajasthan,2006,3.5
+Rajasthan,2007,3.4
+Rajasthan,2008,3.3
+Rajasthan,2009,3.3
+Rajasthan,2010,3.1
+Tamil Nadu,1971,3.9
+Tamil Nadu,1972,3.9
+Tamil Nadu,1973,3.7
+Tamil Nadu,1974,3.6
+Tamil Nadu,1975,3.8
+Tamil Nadu,1976,3.8
+Tamil Nadu,1977,3.9
+Tamil Nadu,1978,3.5
+Tamil Nadu,1979,3.6
+Tamil Nadu,1980,3.4
+Tamil Nadu,1981,3.4
+Tamil Nadu,1982,3.3
+Tamil Nadu,1983,3.3
+Tamil Nadu,1984,3.3
+Tamil Nadu,1985,2.8
+Tamil Nadu,1986,2.7
+Tamil Nadu,1987,2.6
+Tamil Nadu,1988,2.5
+Tamil Nadu,1989,2.5
+Tamil Nadu,1990,2.3
+Tamil Nadu,1991,2.2
+Tamil Nadu,1992,2.2
+Tamil Nadu,1993,2.1
+Tamil Nadu,1994,2.1
+Tamil Nadu,1995,2.2
+Tamil Nadu,1996,2.1
+Tamil Nadu,1997,2.0
+Tamil Nadu,1998,2.0
+Tamil Nadu,1999,2.0
+Tamil Nadu,2000,2.1
+Tamil Nadu,2001,2.0
+Tamil Nadu,2002,2.0
+Tamil Nadu,2003,1.9
+Tamil Nadu,2004,1.8
+Tamil Nadu,2005,1.7
+Tamil Nadu,2006,1.7
+Tamil Nadu,2007,1.6
+Tamil Nadu,2008,1.7
+Tamil Nadu,2009,1.7
+Tamil Nadu,2010,1.7
+Uttar Pradesh,1971,6.6
+Uttar Pradesh,1972,6.6
+Uttar Pradesh,1973,6.4
+Uttar Pradesh,1974,6.4
+Uttar Pradesh,1975,6.6
+Uttar Pradesh,1976,5.9
+Uttar Pradesh,1977,6.1
+Uttar Pradesh,1978,6.0
+Uttar Pradesh,1979,5.8
+Uttar Pradesh,1980,5.9
+Uttar Pradesh,1981,5.8
+Uttar Pradesh,1982,5.7
+Uttar Pradesh,1983,5.8
+Uttar Pradesh,1984,5.9
+Uttar Pradesh,1985,5.6
+Uttar Pradesh,1986,5.4
+Uttar Pradesh,1987,5.5
+Uttar Pradesh,1988,5.4
+Uttar Pradesh,1989,5.2
+Uttar Pradesh,1990,5.2
+Uttar Pradesh,1991,5.1
+Uttar Pradesh,1992,5.2
+Uttar Pradesh,1993,5.2
+Uttar Pradesh,1994,5.1
+Uttar Pradesh,1995,5.0
+Uttar Pradesh,1996,4.9
+Uttar Pradesh,1997,4.8
+Uttar Pradesh,1998,4.6
+Uttar Pradesh,1999,4.7
+Uttar Pradesh,2000,4.7
+Uttar Pradesh,2001,4.5
+Uttar Pradesh,2002,4.4
+Uttar Pradesh,2003,4.4
+Uttar Pradesh,2004,4.4
+Uttar Pradesh,2005,4.2
+Uttar Pradesh,2006,4.2
+Uttar Pradesh,2007,3.9
+Uttar Pradesh,2008,3.8
+Uttar Pradesh,2009,3.7
+Uttar Pradesh,2010,3.5
+West Bengal,1971,
+West Bengal,1972,
+West Bengal,1973,
+West Bengal,1974,
+West Bengal,1975,
+West Bengal,1976,
+West Bengal,1977,
+West Bengal,1978,
+West Bengal,1979,
+West Bengal,1980,
+West Bengal,1981,4.2
+West Bengal,1982,4.1
+West Bengal,1983,4.1
+West Bengal,1984,3.9
+West Bengal,1985,3.7
+West Bengal,1986,3.6
+West Bengal,1987,3.8
+West Bengal,1988,3.5
+West Bengal,1989,3.3
+West Bengal,1990,3.4
+West Bengal,1991,3.2
+West Bengal,1992,2.9
+West Bengal,1993,3.0
+West Bengal,1994,3.0
+West Bengal,1995,2.8
+West Bengal,1996,2.6
+West Bengal,1997,2.6
+West Bengal,1998,2.4
+West Bengal,1999,2.4
+West Bengal,2000,2.4
+West Bengal,2001,2.4
+West Bengal,2002,2.3
+West Bengal,2003,2.3
+West Bengal,2004,2.2
+West Bengal,2005,2.1
+West Bengal,2006,2.0
+West Bengal,2007,1.9
+West Bengal,2008,1.9
+West Bengal,2009,1.9
+West Bengal,2010,1.8
+All India,1971,5.2
+All India,1972,5.2
+All India,1973,4.9
+All India,1974,4.9
+All India,1975,4.9
+All India,1976,4.7
+All India,1977,4.5
+All India,1978,4.5
+All India,1979,4.4
+All India,1980,4.4
+All India,1981,4.5
+All India,1982,4.5
+All India,1983,4.5
+All India,1984,4.5
+All India,1985,4.3
+All India,1986,4.2
+All India,1987,4.1
+All India,1988,4.0
+All India,1989,3.9
+All India,1990,3.8
+All India,1991,3.6
+All India,1992,3.6
+All India,1993,3.5
+All India,1994,3.5
+All India,1995,3.5
+All India,1996,3.4
+All India,1997,3.3
+All India,1998,3.2
+All India,1999,3.2
+All India,2000,3.2
+All India,2001,3.1
+All India,2002,3.0
+All India,2003,3.0
+All India,2004,2.9
+All India,2005,2.9
+All India,2006,2.8
+All India,2007,2.7
+All India,2008,2.6
+All India,2009,2.6
+All India,2010,2.5
