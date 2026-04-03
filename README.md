@@ -1,104 +1,75 @@
-# Demographic Data Dashboard for India
+# 🇮🇳 IndiaMetrics: Demographic Data Dashboard
 
-Short description:
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
+![Plotly](https://img.shields.io/badge/Plotly-Interactive-3f4f75)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-Spatial-139C5A)
 
-This project builds an end-to-end data pipeline to ingest, clean, analyze, and visualize demographic data for India. The dashboard enables comparison across states using indicators from population, economic, healthcare, and food datasets.
+An end-to-end data pipeline and interactive analytics dashboard designed to explore, visualize, and unravel the demographic-economic transition across India's states and districts.
 
----
-
-## Team Members
-
-- Gaurav Chandan     
-- Soumya Ranjan
-- Shweta Shankar
-- Dheeraj Kumar Gehlot
----
-
-## Project Objective
-
-The goal of this project is to analyze demographic patterns across India using datasets from multiple sectors including:
-
-- Population
-- Economy
-- Healthcare
-- Literacy and Urbanisation
-
-We aim to build an interactive dashboard that helps users explore regional disparities and relationships between these indicators.
+### 🌐 **[View the Live Dashboard Here!](https://indiametrics.streamlit.app)**
 
 ---
 
-## Data Sources
+## 📌 Project Overview
+**IndiaMetrics** creates massive datasets combining data from the Indian Government's official Census, the World Bank, and DLHS into a sleek, highly interactive, and multivariate dashboard. Rather than siloed reports, this tool empowers researchers, policymakers, and the public to analyze regional disparities right in their browser.
 
-| Dataset | Source | Description |
+---
+
+## 🚀 Key Features
+
+* **National Demographic Overview**: High-level statistical summaries, dynamic Age Pyramids, historic Life Expectancy curves, and crude birth/death rate trends mapped from 1960 to 2025.
+* **State-Level Trajectories**: Interactive state-wise comparisons of Total Fertility Rates (TFR), Literacy Improvements, Per-Capita Income growth, and multivariate radar charts benchmarking socio-economic well-being.
+* **District Explorer**: Deep-dive choropleth maps rendering data at the granularity of over 600 Indian districts. Visualize geographical clustering for metrics like the Rural-Urban literacy gap and sex ratio imbalances.
+* **Insights & Correlations**: Instantly compute and visualize Pearson correlations to prove out theories (e.g., the negative correlation between female literacy and fertility rates).
+* **Composite Demographic Health Index**: A synthesized index score mapped geographically to approximate human development performance.
+
+---
+
+## 🛠️ How to Run Locally
+
+If you'd like to explore the data pipeline and run the application on your own machine:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-org/DS-Practice-2026-Team-3.git
+   cd DS-Practice-2026-Team-3
+   ```
+
+2. **Install Dependencies**
+   Ensure you have Python 3.8+ installed. Install the required libraries:
+   ```bash
+   pip install streamlit pandas numpy plotly geopandas matplotlib
+   ```
+
+3. **Run the Dashboard**
+   Boot up the Streamlit server locally:
+   ```bash
+   streamlit run dashboard_v3.py
+   ```
+   The application will automatically open in your web browser at `http://localhost:8501`.
+
+---
+
+## 📊 Data Sources
+
+This project relies on merging robust public datasets using common geographic identifiers. Key datasets include:
+
+| Domain | Source | Description |
 |--------|--------|-------------|
-| Population | Census 2001,2011 | Population by state/district |
-| Economic | data.gov | Income, GDP |
-| Healthcare | data.gov | mortality,fertility |
-| Literacy and Urbanisation | data.gov, Census 2011, 2001 | literacy rate, population data |
+| **Population** | Census 2001, 2011 | Absolute numbers, rural/urban splits, sex ratios |
+| **Economic** | data.gov | State-wise GDP (constant pricing) and Per-Capita Income |
+| **Healthcare** | DLHS, SRS, World Bank | TFR, MCPR, mortality rates, and life expectancy |
+| **Literacy** | Census 2011, 2001 | Male/Female literacy rates and temporal gains |
+| **Mobility** | VAHAN Registry | EV & CNG Market share tracking |
 
 ---
 
-## Data Preprocessing Plan
+## 👨‍💻 Team Members
 
-### Data Cleaning
-- Standardize column names
-- Remove duplicate records
-- Handle missing values
+* **Gaurav Chandan**
+* **Soumya Ranjan**
+* **Shweta Shankar**
+* **Dheeraj Kumar Gehlot**
 
-### Data Standardization
-- Standardize state/district names
-- Convert columns to correct data types
-
-### Normalization
-Convert absolute values into comparable indicators such as:
-
-- GDP per capita
-- literacy rate statewise
-- Income in rural v/s urban
-
-### Dataset Integration
-Merge datasets using common geographic identifiers (state or district).
-
----
-
-## Planned Analysis
-
-### Population Analysis
-- Population distribution
-- Population density
-
-### Economic Analysis
-- Income vs population
-- Poverty rates by region
-
-### Healthcare Analysis
-- Fertility distrivt-wise
-- Mortality indicators
-
---
-
-## Visualization Plan
-
-Planned visualizations include:
-
-- Choropleth of demographic indicators
-- Bar charts comparing states
-- Scatter plots showing correlations
-- Time-series plots 
-
----
-## Code Structrure
-
-1. Create a single class whose objects will be initialised with the following variables describing the data it loads:
-- Granularity (State-wise, District-wise, etc.)
-- Indicators
-- Timescale (if applicable)
--  Data source
-
-(Note: Clearly not all combinations of these variables can be accepted as inputs. The gui will be hard-coded to accept only compatible inputs.)
-
-2. Equip the class with methods to plot combinations of the loaded data in styles of the user's choosing
-
-3. Wrap the whole thing in an easy-to-use GUI.
-
-
+*Mini Project for DS3294: Data Science Practice*
