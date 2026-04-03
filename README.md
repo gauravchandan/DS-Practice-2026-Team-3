@@ -1,4 +1,4 @@
-# 🇮🇳 IndiaMetrics: Demographic Data Dashboard
+# IndiaMetrics: Demographic Data Dashboard
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
@@ -7,16 +7,16 @@
 
 An end-to-end data pipeline and interactive analytics dashboard designed to explore, visualize, and unravel the demographic-economic transition across India's states and districts.
 
-### 🌐 **[View the Live Dashboard Here!](https://indiametrics.streamlit.app)**
+### **[View the Live Dashboard Here!](https://indiametrics.streamlit.app)**
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 **IndiaMetrics** creates massive datasets combining data from the Indian Government's official Census, the World Bank, and DLHS into a sleek, highly interactive, and multivariate dashboard. Rather than siloed reports, this tool empowers researchers, policymakers, and the public to analyze regional disparities right in their browser.
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 * **National Demographic Overview**: High-level statistical summaries, dynamic Age Pyramids, historic Life Expectancy curves, and crude birth/death rate trends mapped from 1960 to 2025.
 * **State-Level Trajectories**: Interactive state-wise comparisons of Total Fertility Rates (TFR), Literacy Improvements, Per-Capita Income growth, and multivariate radar charts benchmarking socio-economic well-being.
@@ -26,7 +26,7 @@ An end-to-end data pipeline and interactive analytics dashboard designed to expl
 
 ---
 
-## 🛠️ How to Run Locally
+## How to Run Locally
 
 If you'd like to explore the data pipeline and run the application on your own machine:
 
@@ -51,7 +51,7 @@ If you'd like to explore the data pipeline and run the application on your own m
 
 ---
 
-## 📊 Data Sources
+## Data Sources
 
 This project relies on merging robust public datasets using common geographic identifiers. Key datasets include:
 
@@ -65,7 +65,7 @@ This project relies on merging robust public datasets using common geographic id
 
 ---
 
-## 👨‍💻 Team Members
+## Team Members
 
 * **Gaurav Chandan**
 * **Soumya Ranjan**
