@@ -92,13 +92,13 @@
 India is currently undergoing a massive demographic transition, marked by falling fertility rates, rising life expectancy, and a historical peak in the working-age population share. Understanding these changes across various states and districts is crucial for policy making and socio-economic planning. This project aims to build an end-to-end data pipeline to ingest, clean, analyze, and visualize demographic data for India. The interactive dashboard developed facilitates the exploration of regional disparities and relationships between key indicators spanning population dynamics, economics, healthcare, literacy, and urbanization.
 
 \section{Related Work}
-Demographic studies of India have long relied on decadal Census data and sample surveys. Previous efforts typically provided static reports or siloed dashboards focusing only on either healthcare (e.g., NFHS reports) or economic proxies. Interactive tools combining data from the Census, World Bank, VAHAN, and District Level Household Surveys directly to explore the demographic-economic transition are relatively uncommon. This project bridges that gap by offering a multivariate integration framework through an interactive dashboard to better understand regional demographic shifts.
+Demographic studies of India have long relied on decadal Census data and sample surveys. Previous efforts typically provided static reports or siloed dashboards focusing only on either healthcare (e.g., NFHS reports) or economic proxies. Interactive tools combining data from the Census, World Bank, VAHAN, and District Level Household Surveys directly to explore the demographic-economic transition are relatively uncommon. This project bridges that gap by offering a unified dashboard combining multiple data sources to better understand regional demographic shifts.
 
 \section{Our contribution}
 Our contributions include:
 \begin{itemize}
     \item Integration of multiple datasets (Census 2001/2011, World Bank, data.gov, VAHAN EV/CNG registries).
-    \item Development of a standardized data clearing pipeline to resolve state/district naming inconsistencies and temporal granularity differences.
+    % \item Development of a standardized data clearing pipeline to resolve state/district naming inconsistencies and temporal granularity differences.
     \item Creation of a scalable and interactive Streamlit dashboard mapping state and district level trends from 1971 to 2011 and beyond.
     \item Computation of a Composite Demographic Health Index to summarize the overall well-being across Indian districts.
 \end{itemize}
@@ -106,17 +106,19 @@ Our contributions include:
 \section{Methods}
 \subsection{Data}
 The datasets include Population (Census 2001, 2011), Economic indicators (NSDP GDP, per capita income from data.gov), Healthcare metrics (fertility, mortality from DLHS and SRS), and Literacy and Urbanization figures. 
-
+\\
 Data cleaning involved standardization of column names, handling of missing values, and normalization of categorical strings such as state and district identifiers. Absolute numbers were normalized into robust rates, converting figures like Total Gross Domestic Product (GDP) into per capita equivalents and calculating literacy rates and rural-urban performance gaps.
 
 \subsection{Data Pipeline and Dashboard Architecture}
 The core application code is developed in Python. Data manipulation depends heavily on \verb|pandas| and \verb|numpy| for aggregating, filtering, and joining various datasets. Geo-spatial visualization relies on \verb|geopandas| aligning statistical information to district polygons (GeoJSON). Dashboard interactivity is managed by \verb|streamlit|, enhanced by \verb|plotly| for rendering dynamic choropleths, scatter plots, time-series, and radar charts. 
-
+\\\\
 The main dashboard (\verb|dashboard_v3.py|) follows a modular architecture dividing analytics into:
-1. National Demographic Overview
-2. State Comparisons
-3. District Explorer
-4. Insights \& Correlations
+\begin{itemize}
+    \item National Demographic Overview
+    \item State Comparisons
+    \item District Explorer
+    \item Insights \& Correlations
+\end{itemize}
 
 \section{Results}
 \subsection{National and State Trends}
@@ -125,15 +127,17 @@ The integration pipeline highlights the stark divergence among Indian states reg
 \subsection{Dashboard Interactive Experience}
 The tool developed offers rich interactive components. Notably, users can toggle between absolute counters and per capita metrics. Plotly graphs provide deep drill-down capabilities such as a time-series animation of Green Mobility (EVs and CNG vehicle usage) and state-level comparative radar charts contrasting literacy, sex ratio, urbanization, per-capita income, and TFR simultaneously.
 
-\subsection{Predictive Indexing: Composite Demographic Health Index}
+\subsection{Composite Demographic Health Index}
 We designed a relative performance index summarizing four normalized components: literacy rate, sex ratio, inverted TFR, and urbanization percentage. The choropleth visualization of this index points to explicit geographical bandings, establishing a strong sub-national spatial correlation for overall human development across the subcontinent.
 
 \section{Conclusion and Outlook}
 In conclusion, the Demographic Data Dashboard successfully integrates diverse national datasets into an accessible exploratory tool. The insights reaffirm the classical demographic-economic transition theory on an intra-national scale in India.
-
-The demographic-economic transition theory posits that societies move through a predictable sequence of stages as they develop economically. In the first stage, both birth rates and death rates are high, resulting in slow population growth. As public health and nutrition improve, the second stage sees death rates fall sharply while birth rates remain elevated, producing rapid population growth. In the third stage, rising education levels --- particularly female literacy --- greater urbanization, and improved access to family planning drive birth rates downward. Finally, in the fourth stage, both birth and death rates stabilize at low levels and population growth plateaus or even reverses. Our dashboard captures this transition playing out simultaneously across Indian states at different speeds: states like Kerala and Tamil Nadu have reached the late stages with sub-replacement fertility (TFR below 2.1), high literacy, and elevated per-capita incomes, while states such as Bihar and Uttar Pradesh remain in the earlier stages with higher TFRs and lower literacy. The strong negative correlation between literacy and TFR, and the positive association between per-capita income and lower fertility observed in our analysis, provide direct empirical support for this theoretical framework at the sub-national level (see Appendix \ref{sec:dashboard_plots} for visual evidence). Specifically, Figure \ref{fig:tfr_mcpr} is useful for demonstrating the strong negative correlation between fertility rates and contraceptive prevalence, validating that access to family planning directly lowers TFR across states. Figure \ref{fig:life_expectancy} is useful to visualize the steady historical rise in life expectancy, confirming improved healthcare and nutrition as mortality falls in the second stage of the transition. Lastly, Figure \ref{fig:crude_rates} is useful as it beautifully captures the "vital transition" where the crude birth rate starts narrowing the gap with the crude death rate, proving that long-term population growth is beginning to stabilize.
-
-Future work will involve integrating real-time Census 2021/2024 data (once available) and applying predictive machine learning models to forecast district-level outcomes. 
+\\\\
+The demographic-economic transition theory posits that societies move through a predictable sequence of stages as they develop economically. In the first stage, both birth rates and death rates are high, resulting in slow population growth. As public health and nutrition improve, the second stage sees death rates fall sharply while birth rates remain elevated, producing rapid population growth. In the third stage, rising education levels --- particularly female literacy --- greater urbanization, and improved access to family planning drive birth rates downward. Finally, in the fourth stage, both birth and death rates stabilize at low levels and population growth plateaus or even reverses. 
+\\\\
+Our dashboard captures this transition playing out simultaneously across Indian states at different speeds: states like Kerala and Tamil Nadu have reached the late stages with sub-replacement fertility (TFR below 2.1), high literacy, and elevated per-capita incomes, while states such as Bihar and Uttar Pradesh remain in the earlier stages with higher TFRs and lower literacy. The strong negative correlation between literacy and TFR, and the positive association between per-capita income and lower fertility observed in our analysis, provide direct empirical support for this theoretical framework at the sub-national level (see Appendix \ref{sec:dashboard_plots} for visual evidence). Specifically, Figure \ref{fig:tfr_mcpr} is useful for demonstrating the strong negative correlation between fertility rates and contraceptive prevalence, validating that access to family planning directly lowers TFR across states. Figure \ref{fig:life_expectancy} is useful to visualize the steady historical rise in life expectancy, confirming improved healthcare and nutrition as mortality falls in the second stage of the transition. Lastly, Figure \ref{fig:crude_rates} is useful as it beautifully captures the "vital transition" where the crude birth rate starts narrowing the gap with the crude death rate, proving that long-term population growth is beginning to stabilize.
+\\\\
+Future work will involve integrating newer census data (once available) and possibly applying predictive models to forecast state and district-level outcomes. 
 
 \section{Acknowledgements}
 We acknowledge data.gov.in \cite{datagov}, the World Bank \cite{worldbank}, and the Census of India \cite{census2011} for making their demographic datasets publicly available. We also utilized the VAHAN Dashboard \cite{vahan} for green mobility data.
@@ -142,7 +146,7 @@ We acknowledge data.gov.in \cite{datagov}, the World Bank \cite{worldbank}, and 
 Gaurav Chandan, Soumya Ranjan, Shweta Shankar, and Dheeraj Kumar Gehlot contributed equally to data collection, pipeline engineering, dashboard development, and report writing.
 
 \section{Code availability}
-The full project repository containing datasets, clearing scripts, and Streamlit application is available locally.
+The full project repository is available on \href{https://github.com/gauravchandan/DS-Practice-2026-Team-3}{Github} and the interactive dashboard can be accessed on \href{https://indiametrics.streamlit.app}{Streamlit Community Cloud}.
 
 % --------------------------------------------------------------------
 % --------------------------------------------------------------------
@@ -241,7 +245,7 @@ v_merge = pd.merge(cg_ev, tot, on=['state_name', 'year'])
 v_merge['Green_Pct'] = (v_merge['registrations'] / v_merge['tot_reg']) * 100
 \end{minted}
 
-\subsection{Dashboard Plots}
+\subsection{Useful Plots}
 \label{sec:dashboard_plots}
 
 \begin{figure}[htbp]
