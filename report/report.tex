@@ -131,7 +131,7 @@ We designed a relative performance index summarizing four normalized components:
 \section{Conclusion and Outlook}
 In conclusion, the Demographic Data Dashboard successfully integrates diverse national datasets into an accessible exploratory tool. The insights reaffirm the classical demographic-economic transition theory on an intra-national scale in India.
 
-The demographic-economic transition theory posits that societies move through a predictable sequence of stages as they develop economically. In the first stage, both birth rates and death rates are high, resulting in slow population growth. As public health and nutrition improve, the second stage sees death rates fall sharply while birth rates remain elevated, producing rapid population growth. In the third stage, rising education levels --- particularly female literacy --- greater urbanization, and improved access to family planning drive birth rates downward. Finally, in the fourth stage, both birth and death rates stabilize at low levels and population growth plateaus or even reverses. Our dashboard captures this transition playing out simultaneously across Indian states at different speeds: states like Kerala and Tamil Nadu have reached the late stages with sub-replacement fertility (TFR below 2.1), high literacy, and elevated per-capita incomes, while states such as Bihar and Uttar Pradesh remain in the earlier stages with higher TFRs and lower literacy. The strong negative correlation between literacy and TFR, and the positive association between per-capita income and lower fertility observed in our analysis, provide direct empirical support for this theoretical framework at the sub-national level.
+The demographic-economic transition theory posits that societies move through a predictable sequence of stages as they develop economically. In the first stage, both birth rates and death rates are high, resulting in slow population growth. As public health and nutrition improve, the second stage sees death rates fall sharply while birth rates remain elevated, producing rapid population growth. In the third stage, rising education levels --- particularly female literacy --- greater urbanization, and improved access to family planning drive birth rates downward. Finally, in the fourth stage, both birth and death rates stabilize at low levels and population growth plateaus or even reverses. Our dashboard captures this transition playing out simultaneously across Indian states at different speeds: states like Kerala and Tamil Nadu have reached the late stages with sub-replacement fertility (TFR below 2.1), high literacy, and elevated per-capita incomes, while states such as Bihar and Uttar Pradesh remain in the earlier stages with higher TFRs and lower literacy. The strong negative correlation between literacy and TFR, and the positive association between per-capita income and lower fertility observed in our analysis, provide direct empirical support for this theoretical framework at the sub-national level (see Appendix \ref{sec:dashboard_plots} for visual evidence). Specifically, Figure \ref{fig:tfr_mcpr} is useful for demonstrating the strong negative correlation between fertility rates and contraceptive prevalence, validating that access to family planning directly lowers TFR across states. Figure \ref{fig:life_expectancy} is useful to visualize the steady historical rise in life expectancy, confirming improved healthcare and nutrition as mortality falls in the second stage of the transition. Lastly, Figure \ref{fig:crude_rates} is useful as it beautifully captures the "vital transition" where the crude birth rate starts narrowing the gap with the crude death rate, proving that long-term population growth is beginning to stabilize.
 
 Future work will involve integrating real-time Census 2021/2024 data (once available) and applying predictive machine learning models to forecast district-level outcomes. 
 
@@ -154,6 +154,7 @@ The full project repository containing datasets, clearing scripts, and Streamlit
 
 
 \section{Appendix}
+
 
 
 \subsection{Code snippets}
@@ -240,6 +241,24 @@ v_merge = pd.merge(cg_ev, tot, on=['state_name', 'year'])
 v_merge['Green_Pct'] = (v_merge['registrations'] / v_merge['tot_reg']) * 100
 \end{minted}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/tfr_vs_mcpr.pdf}
+    \caption{Total Fertility Rate vs Modern Contraceptive Prevalence Rate highlighting the strong negative correlation and demographic divergence across Indian states.}
+    \label{fig:tfr_mcpr}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/life_expectancy.pdf}
+    \caption{Life expectancy trends in India (1960–2025). The graph demonstrates the success of long-term public health improvements that characterize the second stage of the demographic transition.}
+    \label{fig:life_expectancy}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/crude_rates.pdf}
+    \caption{Crude Birth Rate vs Crude Death Rate in India (1960-2025). The crossing of these rates visually captures the 'vital transition', a core component of the demographic-economic transition theory.}
+    \label{fig:crude_rates}
+\end{figure}
 
 % --------------------------------------------------------------------
 % --------------------------------------------------------------------
