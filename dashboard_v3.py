@@ -817,18 +817,9 @@ elif page == "Insights & Correlations":
                 
                 final_v_clean = final_v.dropna(subset=['Urban_Pct', y_col, 'Total_Pop'])
                 
-                vh_scat, vh_map = st.tabs(["Animation (Scatter)", "Spatial (Map)"])
-                with vh_scat:
-                    fig_vh = px.scatter(final_v_clean, x='Urban_Pct', y=y_col, animation_frame='year', animation_group='State', size='Total_Pop', color=y_col, hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'])
-                    fig_vh.update_layout(**CHART_LAYOUT, height=530, title=f"Green Mobility vs Urbanisation ({y_lbl})<br><sup>Bubble Size: Total Population</sup>")
-                    st.plotly_chart(fig_vh, use_container_width=True)
-                with vh_map:
-                    max_yr_vh = final_v_clean['year'].max()
-                    map_df = final_v_clean[final_v_clean['year'] == max_yr_vh]
-                    dist_v = pd.merge(df_pivot[['pc11_d_id', 'District_Name', 'State']], map_df[['State', y_col]], on='State', how='inner')
-                    fig_vh_map = build_choropleth(dist_v, 'pc11_d_id', y_col, f"Green Mobility: {y_lbl} ({int(max_yr_vh)})", hover_data=['State'], theme_scale=THEME['CONT_SCALE'])
-                    fig_vh_map.update_layout(height=530)
-                    st.plotly_chart(fig_vh_map, use_container_width=True)
+                fig_vh = px.scatter(final_v_clean, x='Urban_Pct', y=y_col, animation_frame='year', animation_group='State', size='Total_Pop', color=y_col, hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'])
+                fig_vh.update_layout(**CHART_LAYOUT, height=530, title=f"Green Mobility vs Urbanisation ({y_lbl})<br><sup>Bubble Size: Total Population</sup>")
+                st.plotly_chart(fig_vh, use_container_width=True)
                     
                 st.caption("Vehicle fuel type as a development proxy. CNG and Electric adoption is concentrated in high-urbanisation states, mirroring fertility transitions. (VAHAN starts 2019)")
             else:
