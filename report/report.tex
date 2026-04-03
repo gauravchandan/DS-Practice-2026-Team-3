@@ -241,6 +241,9 @@ v_merge = pd.merge(cg_ev, tot, on=['state_name', 'year'])
 v_merge['Green_Pct'] = (v_merge['registrations'] / v_merge['tot_reg']) * 100
 \end{minted}
 
+\subsection{Dashboard Plots}
+\label{sec:dashboard_plots}
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/tfr_vs_mcpr.pdf}

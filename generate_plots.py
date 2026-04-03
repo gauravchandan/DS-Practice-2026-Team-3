@@ -36,8 +36,7 @@ plt.title("Total Fertility Rate vs Modern Contraceptive Prevalence Rate")
 plt.xlabel("MCPR (%)")
 plt.ylabel("Total Fertility Rate (TFR)")
 for i, row in df_mcpr.iterrows():
-    if row['TFR_2011'] > 3 or row['TFR_2011'] < 1.7:
-        plt.text(row['MCPR_Pct'], row['TFR_2011'], row['State'], fontsize=8)
+    plt.text(row['MCPR_Pct'], row['TFR_2011'], row['State'], fontsize=8)
 plt.legend()
 plt.grid(True, alpha=0.3)
 plt.savefig(os.path.join(FIG_DIR, "tfr_vs_mcpr.pdf"), bbox_inches='tight')
