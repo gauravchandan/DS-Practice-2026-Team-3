@@ -1,9 +1,5 @@
 # IndiaMetrics: Demographic Data Dashboard
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
-![Plotly](https://img.shields.io/badge/Plotly-Interactive-3f4f75)
-![GeoPandas](https://img.shields.io/badge/GeoPandas-Spatial-139C5A)
 
 An end-to-end data pipeline and interactive analytics dashboard designed to explore, visualize, and unravel the demographic-economic transition across India's states and districts.
 
