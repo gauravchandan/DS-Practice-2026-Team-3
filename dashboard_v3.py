@@ -281,7 +281,7 @@ with st.sidebar:
                 india<span>metrics</span>
                 <span style="position:absolute; top:-15px; right:-20px; font-size:24px; transform: rotate(15deg);">🎀</span>
             </span><br>
-            <span style="font-size:12px;color:#34d399; position:relative; z-index:2;">Live Analytics Dashboard</span>
+            <span style="font-size:12px;color:#34d399; position:relative; z-index:2;">Analytics Dashboard</span>
         </div>
     """, unsafe_allow_html=True)
     st.markdown('<hr style="border-color:#262626; margin:0 0 20px 0;">', unsafe_allow_html=True)
