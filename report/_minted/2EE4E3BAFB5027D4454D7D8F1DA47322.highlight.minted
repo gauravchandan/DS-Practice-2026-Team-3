@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{is\PYGZus{}green} \PYG{o}{=} \PYG{n}{df\PYGZus{}vahan\PYGZus{}state}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}fuel\PYGZus{}type\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{upper}\PYG{p}{()}\PYG{o}{.}\PYG{n}{str}\PYG{o}{.}\PYG{n}{contains}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}CNG|ELECTRIC\PYGZsq{}}\PYG{p}{,} \PYG{n}{na}\PYG{o}{=}\PYG{k+kc}{False}\PYG{p}{)}
+\PYG{n}{cg\PYGZus{}ev} \PYG{o}{=} \PYG{n}{df\PYGZus{}vahan\PYGZus{}state}\PYG{p}{[}\PYG{n}{is\PYGZus{}green}\PYG{p}{]}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}
+    \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}state\PYGZus{}name\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}year\PYGZsq{}}\PYG{p}{]}
+\PYG{p}{)[}\PYG{l+s+s1}{\PYGZsq{}registrations\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{()}\PYG{o}{.}\PYG{n}{reset\PYGZus{}index}\PYG{p}{()}
+
+\PYG{n}{tot} \PYG{o}{=} \PYG{n}{df\PYGZus{}vahan\PYGZus{}state}\PYG{o}{.}\PYG{n}{groupby}\PYG{p}{(}
+    \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}state\PYGZus{}name\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}year\PYGZsq{}}\PYG{p}{]}
+\PYG{p}{)[}\PYG{l+s+s1}{\PYGZsq{}registrations\PYGZsq{}}\PYG{p}{]}\PYG{o}{.}\PYG{n}{sum}\PYG{p}{()}\PYG{o}{.}\PYG{n}{reset\PYGZus{}index}\PYG{p}{()}
+\PYG{n}{tot}\PYG{o}{.}\PYG{n}{rename}\PYG{p}{(}\PYG{n}{columns}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s1}{\PYGZsq{}registrations\PYGZsq{}}\PYG{p}{:} \PYG{l+s+s1}{\PYGZsq{}tot\PYGZus{}reg\PYGZsq{}}\PYG{p}{\PYGZcb{},} \PYG{n}{inplace}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+
+\PYG{n}{v\PYGZus{}merge} \PYG{o}{=} \PYG{n}{pd}\PYG{o}{.}\PYG{n}{merge}\PYG{p}{(}\PYG{n}{cg\PYGZus{}ev}\PYG{p}{,} \PYG{n}{tot}\PYG{p}{,} \PYG{n}{on}\PYG{o}{=}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}state\PYGZus{}name\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}year\PYGZsq{}}\PYG{p}{])}
+\PYG{n}{v\PYGZus{}merge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Green\PYGZus{}Pct\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}\PYG{n}{v\PYGZus{}merge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}registrations\PYGZsq{}}\PYG{p}{]} \PYG{o}{/} \PYG{n}{v\PYGZus{}merge}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}tot\PYGZus{}reg\PYGZsq{}}\PYG{p}{])} \PYG{o}{*} \PYG{l+m+mi}{100}
+\end{MintedVerbatim}

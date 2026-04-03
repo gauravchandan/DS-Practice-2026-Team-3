@@ -1,0 +1,28 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Government of India}(2026)]{datagov}
+{Government of India}.
+\newblock Open government data (ogd) platform india, 2026.
+\newblock URL \url{https://data.gov.in/}.
+
+\bibitem[{Ministry of Road Transport and Highways, Government of India}(2026)]{vahan}
+{Ministry of Road Transport and Highways, Government of India}.
+\newblock Vahan dashboard, 2026.
+\newblock URL \url{https://vahan.parivahan.gov.in/vahan4dashboard/}.
+
+\bibitem[{Office of the Registrar General \& Census Commissioner, India}(2011)]{census2011}
+{Office of the Registrar General \& Census Commissioner, India}.
+\newblock Census of india 2011, 2011.
+\newblock URL \url{https://censusindia.gov.in/}.
+
+\bibitem[{World Bank Group}(2026)]{worldbank}
+{World Bank Group}.
+\newblock World bank open data, 2026.
+\newblock URL \url{https://data.worldbank.org/}.
+
+\end{thebibliography}

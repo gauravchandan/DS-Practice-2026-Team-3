@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{clean\PYGZus{}state}\PYG{p}{(}\PYG{n}{s}\PYG{p}{):}
+    \PYG{k}{if} \PYG{o+ow}{not} \PYG{n+nb}{isinstance}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,} \PYG{n+nb}{str}\PYG{p}{):} \PYG{k}{return} \PYG{n}{s}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{s}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{()}\PYG{o}{.}\PYG{n}{title}\PYG{p}{()}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZam{}\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}And\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{s}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Nct Of Delhi\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Delhi\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}The Nct Of Delhi\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}Delhi\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{s} \PYG{o}{=} \PYG{n}{s}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Islands\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}\PYGZsq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{strip}\PYG{p}{()}
+    \PYG{k}{return} \PYG{n}{s}
+\end{MintedVerbatim}

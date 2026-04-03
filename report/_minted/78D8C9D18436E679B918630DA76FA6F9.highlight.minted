@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{build\PYGZus{}choropleth}\PYG{p}{(}\PYG{n}{df\PYGZus{}target}\PYG{p}{,} \PYG{n}{location\PYGZus{}col}\PYG{p}{,} \PYG{n}{color\PYGZus{}col}\PYG{p}{,} \PYG{n}{title}\PYG{p}{,} \PYG{n}{hover\PYGZus{}data}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{theme\PYGZus{}scale}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{):}
+    \PYG{n}{fig} \PYG{o}{=} \PYG{n}{px}\PYG{o}{.}\PYG{n}{choropleth\PYGZus{}mapbox}\PYG{p}{(}
+        \PYG{n}{df\PYGZus{}target}\PYG{p}{,} \PYG{n}{geojson}\PYG{o}{=}\PYG{n}{geojson}\PYG{p}{,} \PYG{n}{featureidkey}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}properties.pc11\PYGZus{}d\PYGZus{}id\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{locations}\PYG{o}{=}\PYG{n}{location\PYGZus{}col}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{color\PYGZus{}col}\PYG{p}{,}
+        \PYG{n}{color\PYGZus{}continuous\PYGZus{}scale}\PYG{o}{=}\PYG{n}{theme\PYGZus{}scale}\PYG{p}{,}
+        \PYG{n}{hover\PYGZus{}name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}District\PYGZus{}Name\PYGZsq{}} \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}District\PYGZus{}Name\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{df\PYGZus{}target}\PYG{o}{.}\PYG{n}{columns} \PYG{k}{else} \PYG{l+s+s1}{\PYGZsq{}State\PYGZsq{}}\PYG{p}{,}
+        \PYG{n}{hover\PYGZus{}data}\PYG{o}{=}\PYG{n}{hover\PYGZus{}data}\PYG{p}{,}
+        \PYG{n}{mapbox\PYGZus{}style}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}carto\PYGZhy{}darkmatter\PYGZdq{}}\PYG{p}{,} \PYG{n}{center}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}lat\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{22}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}lon\PYGZdq{}}\PYG{p}{:} \PYG{l+m+mi}{83}\PYG{p}{\PYGZcb{},} \PYG{n}{zoom}\PYG{o}{=}\PYG{l+m+mf}{3.3}
+    \PYG{p}{)}
+    \PYG{k}{if} \PYG{l+s+s1}{\PYGZsq{}geometry\PYGZsq{}} \PYG{o+ow}{in} \PYG{n}{india\PYGZus{}boundary}\PYG{o}{.}\PYG{n}{columns}\PYG{p}{:}
+        \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}trace}\PYG{p}{(}\PYG{n}{get\PYGZus{}boundary\PYGZus{}trace}\PYG{p}{(}\PYG{n}{india\PYGZus{}boundary}\PYG{p}{))}
+    \PYG{n}{fig}\PYG{o}{.}\PYG{n}{update\PYGZus{}layout}\PYG{p}{(}
+        \PYG{n}{margin}\PYG{o}{=}\PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{:}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}t\PYGZdq{}}\PYG{p}{:}\PYG{l+m+mi}{40}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}l\PYGZdq{}}\PYG{p}{:}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+s+s2}{\PYGZdq{}b\PYGZdq{}}\PYG{p}{:}\PYG{l+m+mi}{0}\PYG{p}{\PYGZcb{},} \PYG{n}{height}\PYG{o}{=}\PYG{l+m+mi}{500}\PYG{p}{,}
+        \PYG{n}{paper\PYGZus{}bgcolor}\PYG{o}{=}\PYG{n}{PAPER\PYGZus{}BG}\PYG{p}{,} \PYG{n}{plot\PYGZus{}bgcolor}\PYG{o}{=}\PYG{n}{PLOT\PYGZus{}BG}\PYG{p}{,}
+        \PYG{n}{title}\PYG{o}{=}\PYG{n}{title}\PYG{p}{,} \PYG{n}{title\PYGZus{}font}\PYG{o}{=}\PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}e5e5e5\PYGZdq{}}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{fig}
+\end{MintedVerbatim}

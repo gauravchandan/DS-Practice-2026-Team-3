@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{norm}\PYG{p}{(}\PYG{n}{s}\PYG{p}{):}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{s} \PYG{o}{\PYGZhy{}} \PYG{n}{s}\PYG{o}{.}\PYG{n}{min}\PYG{p}{())} \PYG{o}{/} \PYG{p}{(}\PYG{n}{s}\PYG{o}{.}\PYG{n}{max}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{s}\PYG{o}{.}\PYG{n}{min}\PYG{p}{())}
+
+\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Lit\PYGZus{}score\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{norm}\PYG{p}{(}\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Literacy\PYGZus{}Rate\PYGZsq{}}\PYG{p}{])}
+\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}SR\PYGZus{}score\PYGZsq{}}\PYG{p}{]}  \PYG{o}{=} \PYG{n}{norm}\PYG{p}{(}\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Sex\PYGZus{}Ratio\PYGZsq{}}\PYG{p}{])}
+\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}TFR\PYGZus{}score\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{norm}\PYG{p}{(}\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}TFR\PYGZus{}2011\PYGZsq{}}\PYG{p}{])}  \PYG{c+c1}{\PYGZsh{} Inverted: lower is better}
+\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Urb\PYGZus{}score\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{norm}\PYG{p}{(}\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Urban\PYGZus{}Pct\PYGZsq{}}\PYG{p}{])}
+\PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Composite\PYGZus{}Index\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{p}{(}
+    \PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Lit\PYGZus{}score\PYGZsq{}}\PYG{p}{]} \PYG{o}{+} \PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}SR\PYGZus{}score\PYGZsq{}}\PYG{p}{]}
+    \PYG{o}{+} \PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}TFR\PYGZus{}score\PYGZsq{}}\PYG{p}{]} \PYG{o}{+} \PYG{n}{merged\PYGZus{}heat}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}Urb\PYGZus{}score\PYGZsq{}}\PYG{p}{]}
+\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{4} \PYG{o}{*} \PYG{l+m+mi}{100}
+\end{MintedVerbatim}
