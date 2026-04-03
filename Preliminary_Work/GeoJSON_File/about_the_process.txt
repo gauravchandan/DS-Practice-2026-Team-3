@@ -1,0 +1,7 @@
+The GeoJSON file for 2011 India was created using the codes available in the .py file present in this folder. The data for creating the geojson file was downloaded from aikosh site- https://aikosh.indiaai.gov.in/home/datasets/details/2011_population_census_district_polygon_geometries.html
+
+After creating the geojson file, it was compressed to save space and time. 
+
+The geojson files seemed unreliable and the project required the geojson file appropriate to fit the census data used.
+
+
