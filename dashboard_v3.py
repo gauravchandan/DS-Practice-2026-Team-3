@@ -191,6 +191,20 @@ for _df in [df_pivot, df_state, df_gdp, df_pc, df_mcpr, df_gmfr, df_tfr_2011]:
     if not _df.empty and 'State' in _df.columns:
         _df['State'] = _df['State'].apply(clean_state)
 
+# Duplicate Andhra Pradesh to Telangana for legacy state-level datasets missing Telangana
+if not df_state.empty and 'Telangana' not in df_state['State'].values and 'Andhra Pradesh' in df_state['State'].values:
+    df_state = pd.concat([df_state, df_state[df_state['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+if not df_gdp.empty and 'Telangana' not in df_gdp['State'].values and 'Andhra Pradesh' in df_gdp['State'].values:
+    df_gdp = pd.concat([df_gdp, df_gdp[df_gdp['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+if not df_pc.empty and 'Telangana' not in df_pc['State'].values and 'Andhra Pradesh' in df_pc['State'].values:
+    df_pc = pd.concat([df_pc, df_pc[df_pc['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+if not df_mcpr.empty and 'Telangana' not in df_mcpr['State'].values and 'Andhra Pradesh' in df_mcpr['State'].values:
+    df_mcpr = pd.concat([df_mcpr, df_mcpr[df_mcpr['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+if not df_gmfr.empty and 'Telangana' not in df_gmfr['State'].values and 'Andhra Pradesh' in df_gmfr['State'].values:
+    df_gmfr = pd.concat([df_gmfr, df_gmfr[df_gmfr['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+if not df_tfr_2011.empty and 'Telangana' not in df_tfr_2011['State'].values and 'Andhra Pradesh' in df_tfr_2011['State'].values:
+    df_tfr_2011 = pd.concat([df_tfr_2011, df_tfr_2011[df_tfr_2011['State'] == 'Andhra Pradesh'].assign(State='Telangana')], ignore_index=True)
+
 india_boundary = load_boundary()
 
 def get_boundary_trace(india_boundary):
@@ -214,15 +228,49 @@ def build_choropleth(df_target, location_col, color_col, title, hover_data=None,
         color_continuous_scale=theme_scale, 
         hover_name='District_Name' if 'District_Name' in df_target.columns else 'State',
         hover_data=hover_data,
-        mapbox_style="carto-darkmatter", center={"lat": 22, "lon": 83}, zoom=3.3
+        mapbox_style="carto-darkmatter"
     )
     if 'geometry' in india_boundary.columns:
         fig.add_trace(get_boundary_trace(india_boundary))
-    fig.update_layout(
+        
+    lons, lats = [], []
+    target_ids = set(df_target[location_col].astype(str).tolist())
+    for f in geojson.get('features', []):
+        if str(f.get('properties', {}).get('pc11_d_id')) in target_ids:
+            geom = f.get('geometry')
+            if not geom: continue
+            geom_type = geom.get('type')
+            coords = geom.get('coordinates', [])
+            if geom_type == 'Polygon':
+                for ring in coords:
+                    for pt in ring:
+                        lons.append(pt[0]); lats.append(pt[1])
+            elif geom_type == 'MultiPolygon':
+                for poly in coords:
+                    for ring in poly:
+                        for pt in ring:
+                            lons.append(pt[0]); lats.append(pt[1])
+                            
+    base_layout = dict(
         margin={"r":0,"t":40,"l":0,"b":0}, height=500, 
         paper_bgcolor=PAPER_BG, plot_bgcolor=PLOT_BG,
         title=title, title_font=dict(color="#e5e5e5")
     )
+    
+    if lons and lats:
+        lon_pad = (max(lons) - min(lons)) * 0.05
+        lat_pad = (max(lats) - min(lats)) * 0.05
+        bounds = {
+            "west": min(lons) - lon_pad,
+            "east": max(lons) + lon_pad,
+            "south": min(lats) - lat_pad,
+            "north": max(lats) + (lat_pad * 1.5)  # Extra padding on top to prevent cropping
+        }
+        # Set zoom to None so bounds take precedence
+        fig.update_layout(**base_layout, mapbox=dict(bounds=bounds, zoom=None, center=None))
+    else:
+        fig.update_layout(**base_layout, mapbox=dict(center={"lat": 22, "lon": 83}, zoom=3.3))
+        
     return fig
 
 # ── Sidebar ────────────────────────────────────────────────────────
@@ -242,10 +290,10 @@ with st.sidebar:
     st.markdown('<hr style="border-color:#262626; margin:20px 0;">', unsafe_allow_html=True)
     selected_state = st.selectbox("Select State (Filters Data)", ["All States"] + sorted(df_pivot['State'].dropna().unique().tolist()))
     
-    min_yr, max_yr = 2016, 2025
-    if not df_ages.empty and 'Year' in df_ages.columns:
-        min_yr = int(df_ages['Year'].min())
-        max_yr = int(df_ages['Year'].max())
+    min_yr, max_yr = 1960, 2025
+    if not df_wb_wide.empty and 'Year' in df_wb_wide.columns:
+        min_yr = int(df_wb_wide['Year'].min())
+        max_yr = int(df_wb_wide['Year'].max())
         
     selected_year = st.slider("Select Year", min_value=min_yr, max_value=max_yr, value=max_yr, step=1)
     
@@ -288,7 +336,7 @@ df_pivot_f = df_pivot if selected_state == "All States" else df_pivot[df_pivot['
 # ========== TAB 1: OVERVIEW ==========
 if page == "Overview":
     st.markdown('<h2 style="margin-top:0;">National Demographic Overview</h2>', unsafe_allow_html=True)
-    st.markdown("> **India is undergoing a demographic transition — fertility is falling, life expectancy is rising, and the working-age share of the population is at a historic peak.** This tab shows the national arc of that change from 1960 to the present.")
+    st.markdown("> **India is undergoing a demographic transition fertility is falling, life expectancy is rising, and the working-age share of the population is at a historic peak.** This tab shows the national arc of that change from 1960 to the present.")
     
     # METRIC CARDS
     c1, c2, c3, c4 = st.columns(4)
@@ -315,7 +363,7 @@ if page == "Overview":
     st.markdown("---")
     ic1, ic2, ic3 = st.columns([1.4, 0.8, 1.2])
     
-    df_ages_clean = df_ages.dropna(subset=['Year', 'Population, female (% of total population)']).copy()
+    df_ages_clean = df_wb_wide.dropna(subset=['Year', 'Population, female (% of total population)']).copy()
     if not df_ages_clean.empty:
         pyr_yr = selected_year
         target_row = df_ages_clean[df_ages_clean['Year'] == pyr_yr].iloc[0] if pyr_yr in df_ages_clean['Year'].values else df_ages_clean.iloc[0]
@@ -453,13 +501,13 @@ if page == "Overview":
         st.markdown("""
         - **Census Base:** 2011 for district data. Note that district boundaries reflect the 2011 Census — some states have since been reorganised.
         - **World Bank Series:** 1960–2025, with some values interpolated for missing years using robust filling.
-        - **Ages.csv:** World Bank estimates, specifically valid for the 2016–2018 window visually represented in the Age Pyramid.
+        - **Age Pyramid Data:** Uses World Bank estimates covering 1960-2025, allowing visual tracking of demographic changes.
         """)
 
 # ========== TAB 2: STATE COMPARISONS ==========
 elif page == "State Comparisons":
     st.markdown('<h2 style="margin-top:0;">State-Level Trajectories</h2>', unsafe_allow_html=True)
-    st.markdown("> **India's 28 states tell dramatically different demographic stories.** Kerala and Bihar are often cited as opposite ends of the spectrum — separated by 30 years of development trajectory. This tab lets you compare states across education, fertility, income, and gender equity.")
+    st.markdown("> **India's 28 states and 8 union territories tell dramatically different demographic stories.** Kerala and Bihar are often cited as opposite ends of the spectrum, separated by 30 years of development trajectory. This tab lets you compare states across education, fertility, income, and gender equity.")
     
     st2_1, st2_2, st2_3, st2_4 = st.tabs(["Fertility", "Literacy", "Economy", "Multi-metric (Radar)"])
     
@@ -478,7 +526,7 @@ elif page == "State Comparisons":
             gmfr_all = df_gmfr[df_gmfr['State'] == 'All India']
             fig_gap.add_trace(go.Scatter(x=gmfr_all['Year'], y=gmfr_all['TMFR_Rural'], name='Rural', mode='lines+markers', line=dict(color=THEME['FEMALE'])))
             fig_gap.add_trace(go.Scatter(x=gmfr_all['Year'], y=gmfr_all['TMFR_Urban'], name='Urban', mode='lines+markers', line=dict(color=THEME['SEQ_2'])))
-            fig_gap.update_layout(**CHART_LAYOUT, height=400, title="Rural vs Urban TMFR Gap")
+            fig_gap.update_layout(**CHART_LAYOUT, height=400, title="Rural vs Urban TMFR Gap", xaxis_title="Year", yaxis_title="TMFR")
             st.plotly_chart(fig_gap, use_container_width=True)
             st.caption("TMFR = Total Marital Fertility Rate. The rural-urban gap reflects differences in education, contraceptive access, and women's workforce participation. The gap narrowing over time signals urbanisation.")
 
@@ -492,7 +540,7 @@ elif page == "State Comparisons":
                 scat_df['Total_Pop'] = 10
             
             fig_scat = px.scatter(scat_df, x='MCPR_Pct', y='TFR_2011', size='Total_Pop', color='TFR_2011', hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'], labels=LABELS)
-            fig_scat.update_layout(**CHART_LAYOUT, height=400, title="TFR vs MCPR")
+            fig_scat.update_layout(**CHART_LAYOUT, height=400, title="TFR vs MCPR<br><sup>Bubble Size: Total Population</sup>")
             st.plotly_chart(fig_scat, use_container_width=True)
             st.caption("MCPR = Modern Contraceptive Prevalence Rate. The negative correlation with TFR is the clearest evidence that family planning access drives fertility decline.")
             
@@ -517,9 +565,10 @@ elif page == "State Comparisons":
             for idx, row in df_state_clean[df_state_clean['State'].isin(slope_states)].iterrows():
                 gap_change = (row['Lit_M_11'] - row['Lit_F_11']) - (row['Lit_M_01'] - row['Lit_F_01'])
                 color = THEME['SEQ_2'] if gap_change < 0 else THEME['FEMALE'] # green if narrowed, red if widened
-                fig_slope.add_trace(go.Scatter(x=[2001, 2011], y=[row['Lit_Tot_01'], row['Lit_Tot_11']], mode='lines+markers', name=row['State'], line=dict(color=color, width=2), hoverinfo='name+y'))
+                fig_slope.add_trace(go.Scatter(x=[2001, 2011], y=[row['Lit_Tot_01'], row['Lit_Tot_11']], mode='lines+markers+text', text=["", row['State']], textposition="middle right", name=row['State'], line=dict(color=color, width=2), hoverinfo='name+y'))
             fig_slope.update_layout(**CHART_LAYOUT, height=450, showlegend=False, title="Literacy Slope (2001 to 2011)")
-            fig_slope.update_xaxes(tickvals=[2001, 2011])
+            fig_slope.update_layout(margin=dict(t=40, b=20, l=20, r=80))
+            fig_slope.update_xaxes(tickvals=[2001, 2011], range=[2000.5, 2013.5])
             st.plotly_chart(fig_slope, use_container_width=True)
             st.caption("Each line is one state. Steep upward slope = large improvement 2001→2011. Green line = Gender gap narrowed; Red line = Gender gap widened. Source: Census.")
             
@@ -570,7 +619,7 @@ elif page == "State Comparisons":
                 pop_map2 = df_pivot.groupby('State')['Total_Pop'].sum().reset_index()
                 inc_tfr = pd.merge(inc_tfr, pop_map2, on='State', how='left').fillna(1e6)
                 fig_inc_tfr = px.scatter(inc_tfr, x='Per_Capita', y='TFR_2011', size='Total_Pop', color='TFR_2011', hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'], labels=LABELS)
-                fig_inc_tfr.update_layout(**CHART_LAYOUT, height=840, title="Per-capita Income vs TFR (The Demographic-Economic Transition)")
+                fig_inc_tfr.update_layout(**CHART_LAYOUT, height=840, title="Per-capita Income vs TFR (The Demographic-Economic Transition)<br><sup>Bubble Size: Total Population</sup>")
                 st.plotly_chart(fig_inc_tfr, use_container_width=True)
                 st.caption("The demographic-economic transition: as income rises, fertility falls. This relationship is clearly present across Indian states. Outliers are analytically interesting cases.")
     
@@ -710,7 +759,7 @@ elif page == "Insights & Correlations":
             # Quadrant annotations
             fig_bub.add_annotation(x=85, y=1.7, text="High Lit, Low TFR<br>(Kerala, TN)", showarrow=False, font=dict(color="#a3a3a3", size=10), bgcolor="#1e293b", opacity=0.8)
             fig_bub.add_annotation(x=65, y=3.2, text="Low Lit, High TFR<br>(Bihar, UP)", showarrow=False, font=dict(color="#a3a3a3", size=10), bgcolor="#1e293b", opacity=0.8)
-            fig_bub.update_layout(**CHART_LAYOUT, height=500)
+            fig_bub.update_layout(**CHART_LAYOUT, height=500, title="<sup>Bubble Size: Total Population</sup>")
             st.plotly_chart(fig_bub, use_container_width=True)
             st.caption("This chart is the central argument of demographic transition theory: education reduces fertility. Bubble size = population. Color = income. Note high-income states cluster in the low-TFR quadrant.")
 
@@ -767,9 +816,20 @@ elif page == "Insights & Correlations":
                 y_lbl = 'Absolute Green EVs/CNGs' if not use_per_capita else 'Green Mobility %'
                 
                 final_v_clean = final_v.dropna(subset=['Urban_Pct', y_col, 'Total_Pop'])
-                fig_vh = px.scatter(final_v_clean, x='Urban_Pct', y=y_col, animation_frame='year', animation_group='State', size='Total_Pop', color=y_col, hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'])
-                fig_vh.update_layout(**CHART_LAYOUT, height=600, title=f"Green Mobility vs Urbanisation ({y_lbl})")
-                st.plotly_chart(fig_vh, use_container_width=True)
+                
+                vh_scat, vh_map = st.tabs(["Animation (Scatter)", "Spatial (Map)"])
+                with vh_scat:
+                    fig_vh = px.scatter(final_v_clean, x='Urban_Pct', y=y_col, animation_frame='year', animation_group='State', size='Total_Pop', color=y_col, hover_name='State', size_max=40, color_continuous_scale=THEME['CONT_SCALE'])
+                    fig_vh.update_layout(**CHART_LAYOUT, height=530, title=f"Green Mobility vs Urbanisation ({y_lbl})<br><sup>Bubble Size: Total Population</sup>")
+                    st.plotly_chart(fig_vh, use_container_width=True)
+                with vh_map:
+                    max_yr_vh = final_v_clean['year'].max()
+                    map_df = final_v_clean[final_v_clean['year'] == max_yr_vh]
+                    dist_v = pd.merge(df_pivot[['pc11_d_id', 'District_Name', 'State']], map_df[['State', y_col]], on='State', how='inner')
+                    fig_vh_map = build_choropleth(dist_v, 'pc11_d_id', y_col, f"Green Mobility: {y_lbl} ({int(max_yr_vh)})", hover_data=['State'], theme_scale=THEME['CONT_SCALE'])
+                    fig_vh_map.update_layout(height=530)
+                    st.plotly_chart(fig_vh_map, use_container_width=True)
+                    
                 st.caption("Vehicle fuel type as a development proxy. CNG and Electric adoption is concentrated in high-urbanisation states, mirroring fertility transitions. (VAHAN starts 2019)")
             else:
                 st.info("Insufficient spatial mapping for VAHAN data.")
